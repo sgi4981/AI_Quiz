@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Quiz — Code Ninjas Milton</title>
+    <meta
+      name="description"
+      content="A kid-friendly AI quiz and fact quiz for Tech Fair visitors."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar" aria-label="Code Ninjas Milton branding">
+        <div class="brand-row">
+          <img
+            src="athon.gif"
+            alt="Athon mascot"
+            class="brand-mascot"
+          />
+          <img
+            src="Code_Ninjas_Logo_Stacked_Ful.png"
+            alt="Code Ninjas Milton logo"
+            class="brand-logo"
+          />
+        </div>
+      </header>
+
+      <main class="screen-container">
+        <section id="cover-screen" class="screen active" aria-live="polite">
+          <div class="cover-panel">
+            <div class="cover-hero">
+              <div class="cover-badge">AI in everyday life</div>
+            </div>
+
+            <div class="intro-video-panel" aria-label="Introductory AI video">
+              <iframe
+                class="intro-video-screen"
+                src="https://www.youtube.com/embed/oJC8VIDSx_Q?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1"
+                title="Introductory AI video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+              <p class="video-caption">
+                AI is already helping people every day — from search and maps to games,
+                music, and helpful assistants.
+              </p>
+            </div>
+
+            <button id="start-btn" class="primary-btn" type="button">
+              Test Your AI Knowledge
+            </button>
+          </div>
+        </section>
+
+        <section id="facts-screen" class="screen" aria-live="polite">
+          <div class="card facts-card">
+            <p id="fact-progress" class="screen-progress">Fact 1 of 10</p>
+            <h2>AI Fact</h2>
+            <p id="fact-text" class="fact-text"></p>
+            <p id="fact-source" class="fact-source"></p>
+            <button id="next-fact-btn" class="primary-btn" type="button">NEXT</button>
+          </div>
+        </section>
+
+        <section id="quiz-screen" class="screen">
+          <div class="card quiz-card">
+            <p id="quiz-progress" class="screen-progress">Question 1 of 10</p>
+            <h2 id="question-text">Question</h2>
+            <div id="answer-options" class="options" role="list"></div>
+            <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+            <button id="next-question-btn" class="primary-btn hidden" type="button">
+              NEXT
+            </button>
+          </div>
+        </section>
+
+        <section id="results-screen" class="screen">
+          <div class="card results-card">
+            <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+            <h2>Your results</h2>
+            <p id="score-text" class="score-text">0 / 10 — 0%</p>
+            <p id="result-message" class="result-message"></p>
+            <div class="results-actions">
+              <button id="try-again-btn" class="primary-btn" type="button">Try Again?</button>
+              <button id="start-over-btn" class="secondary-btn" type="button">
+                Start Over
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
