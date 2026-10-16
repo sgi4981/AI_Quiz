@@ -118,14 +118,17 @@ const screenMap = {
   cover: document.getElementById('cover-screen'),
   facts: document.getElementById('facts-screen'),
   quiz: document.getElementById('quiz-screen'),
-  results: document.getElementById('results-screen')
+  results: document.getElementById('results-screen'),
+  tools: document.getElementById('ai-tools-screen')
 };
 
 const startBtn = document.getElementById('start-btn');
+const aiToolsBtn = document.getElementById('ai-tools-btn');
 const nextFactBtn = document.getElementById('next-fact-btn');
 const nextQuestionBtn = document.getElementById('next-question-btn');
 const tryAgainBtn = document.getElementById('try-again-btn');
 const startOverBtn = document.getElementById('start-over-btn');
+const startOverIcon = document.getElementById('start-over-icon');
 
 const factProgress = document.getElementById('fact-progress');
 const factText = document.getElementById('fact-text');
@@ -317,6 +320,10 @@ startBtn.addEventListener('click', () => {
   showFact(0);
 });
 
+aiToolsBtn.addEventListener('click', () => {
+  showScreen('tools');
+});
+
 nextFactBtn.addEventListener('click', nextFact);
 nextQuestionBtn.addEventListener('click', nextQuestion);
 
@@ -331,6 +338,8 @@ tryAgainBtn.addEventListener('click', () => {
 startOverBtn.addEventListener('click', () => {
   startOver();
 });
+
+startOverIcon.addEventListener('click', startOver);
 
 document.addEventListener('pointerdown', resetIdleTimer);
 document.addEventListener('keydown', resetIdleTimer);

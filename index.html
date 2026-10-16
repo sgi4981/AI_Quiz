@@ -49,9 +49,14 @@
               </p>
             </div>
 
-            <button id="start-btn" class="primary-btn" type="button">
-              Test Your AI Knowledge
-            </button>
+            <div class="cover-actions">
+              <button id="start-btn" class="primary-btn" type="button">
+                Test Your AI Knowledge
+              </button>
+              <button id="ai-tools-btn" class="primary-btn" type="button">
+                Try AI Tools
+              </button>
+            </div>
           </div>
         </section>
 
@@ -91,6 +96,50 @@
             </div>
           </div>
         </section>
+
+        <section id="ai-tools-screen" class="screen" aria-labelledby="ai-tools-heading">
+          <div class="card tools-card">
+            <h2 id="ai-tools-heading">Try these AI Tools</h2>
+            <div class="ai-tools-grid">
+              <article class="ai-tool-card">
+                <h3>Quick, Draw!</h3>
+                <p>Draw a picture and see if AI can guess what it is.</p>
+                <a class="tool-link" href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">
+                  Play Quick, Draw! <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+
+              <article class="ai-tool-card">
+                <h3>Semantris</h3>
+                <p>Try a word game powered by language understanding.</p>
+                <a class="tool-link" href="https://research.google.com/semantris/" target="_blank" rel="noopener noreferrer">
+                  Play Semantris <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+
+              <article class="ai-tool-card">
+                <h3>Evolution</h3>
+                <p>Explore how creatures can evolve and adapt over time.</p>
+                <a class="tool-link" href="https://keiwan.itch.io/evolution" target="_blank" rel="noopener noreferrer">
+                  Play Evolution <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <button
+          id="start-over-icon"
+          class="start-over-icon"
+          type="button"
+          aria-label="Start over and return to the first page"
+          title="Start over"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 12a9 9 0 1 0 2.64-6.36L3 8.25" />
+            <path d="M3 3v5.25h5.25" />
+          </svg>
+        </button>
       </main>
     </div>
 

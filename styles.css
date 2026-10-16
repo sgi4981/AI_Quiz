@@ -94,6 +94,45 @@ button {
   background: linear-gradient(180deg, #f3f5f7 0%, #eef4fb 100%);
 }
 
+.start-over-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: var(--brand-blue-soft);
+  color: var(--white);
+  box-shadow: 0 8px 18px rgba(119, 140, 169, 0.3);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.start-over-icon:hover {
+  transform: translateY(-2px) rotate(-12deg);
+  box-shadow: 0 12px 22px rgba(147, 169, 200, 0.38);
+}
+
+.start-over-icon:focus-visible {
+  outline: 4px solid rgba(180, 215, 234, 0.7);
+  outline-offset: 3px;
+}
+
+.start-over-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
 .screen {
   display: none;
   min-height: 650px;
@@ -119,6 +158,17 @@ button {
   align-items: center;
   gap: 20px;
   padding-top: 16px;
+}
+
+.cover-actions {
+  display: flex;
+  width: min(100%, 620px);
+  gap: 16px;
+}
+
+.cover-actions .primary-btn {
+  flex: 1;
+  min-width: 0;
 }
 
 .cover-hero {
@@ -226,6 +276,64 @@ button {
   border-radius: 28px;
   padding: 28px 28px 26px;
   box-shadow: 0 16px 36px var(--shadow);
+}
+
+.tools-card {
+  width: min(100%, 940px);
+}
+
+.ai-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ai-tool-card {
+  min-width: 0;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px 18px;
+  border: 2px solid rgba(12, 110, 204, 0.18);
+  border-radius: 20px;
+  background: linear-gradient(160deg, #ffffff, #edf5ff);
+  box-shadow: 0 10px 24px rgba(31, 60, 100, 0.1);
+}
+
+.ai-tool-card h3 {
+  margin: 0;
+  color: var(--brand-blue-deep);
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+.ai-tool-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.tool-link {
+  display: inline-block;
+  margin-top: auto;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-deep));
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+}
+
+.tool-link:focus-visible {
+  outline: 4px solid rgba(78, 194, 255, 0.7);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 .screen-progress {
@@ -423,6 +531,10 @@ button {
   .screen {
     min-height: 610px;
     padding: 20px 16px 28px;
+  }
+
+  .ai-tools-grid {
+    grid-template-columns: 1fr;
   }
 
   .intro-video-panel {
