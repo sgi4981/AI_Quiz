@@ -473,6 +473,13 @@ button {
   color: var(--ink);
 }
 
+.save-status {
+  min-height: 1.5em;
+  margin: -8px 0 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .results-actions {
   display: flex;
   justify-content: center;

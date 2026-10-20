@@ -114,6 +114,9 @@ const questions = [
   }
 ];
 
+// Paste the deployed Google Apps Script web app URL here to enable sheet saving.
+const GOOGLE_SHEETS_WEB_APP_URL = '';
+
 const screenMap = {
   cover: document.getElementById('cover-screen'),
   facts: document.getElementById('facts-screen'),
@@ -146,6 +149,7 @@ const confettiLayer = document.getElementById('confetti-layer');
 let factIndex = 0;
 let questionIndex = 0;
 let correctAnswers = 0;
+let answersForRun = [];
 let currentQuestion = null;
 let currentAnswer = null;
 let factsList = [];
@@ -179,6 +183,7 @@ function startOver() {
   factIndex = 0;
   questionIndex = 0;
   correctAnswers = 0;
+  answersForRun = [];
   currentAnswer = null;
   factsList = [...facts];
   quizList = shuffle(questions);
@@ -246,6 +251,13 @@ function handleAnswer(button, selectedOption) {
 
   const isCorrect = selectedOption === currentQuestion.answer;
   if (isCorrect) correctAnswers += 1;
+  answersForRun.push({
+    questionNumber: questionIndex + 1,
+    question: currentQuestion.question,
+    selectedAnswer: selectedOption,
+    correctAnswer: currentQuestion.answer,
+    isCorrect
+  });
 
   feedback.textContent = `${isCorrect ? 'Correct!' : 'Nice try!'} ${currentQuestion.explanation}`;
   feedback.classList.remove('hidden');
@@ -295,6 +307,33 @@ function showResults() {
   }
 
   showScreen('results');
+  saveQuizResult(total, percent);
+}
+
+function saveQuizResult(total, percent) {
+  const saveStatus = document.getElementById('save-status');
+
+  if (!GOOGLE_SHEETS_WEB_APP_URL) {
+    saveStatus.textContent = 'Results are not being saved yet. Set up the Google Sheets connection to enable saving.';
+    return;
+  }
+
+  saveStatus.textContent = 'Sending your result to Google Sheets…';
+  fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({
+      score: correctAnswers,
+      total,
+      percent,
+      answers: answersForRun
+    })
+  }).then(() => {
+    saveStatus.textContent = 'Result sent. It may take a moment to appear in the Google Sheet.';
+  }).catch(() => {
+    saveStatus.textContent = 'Could not send the result. Check the connection and try again.';
+  });
 }
 
 function createConfetti() {
@@ -315,6 +354,8 @@ function createConfetti() {
 
 startBtn.addEventListener('click', () => {
   factIndex = 0;
+  correctAnswers = 0;
+  answersForRun = [];
   factsList = [...facts];
   showScreen('facts');
   showFact(0);
@@ -329,6 +370,7 @@ nextQuestionBtn.addEventListener('click', nextQuestion);
 
 tryAgainBtn.addEventListener('click', () => {
   correctAnswers = 0;
+  answersForRun = [];
   questionIndex = 0;
   quizList = shuffle(questions);
   showScreen('quiz');
