@@ -67,12 +67,13 @@ button {
 .brand-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 12px;
   width: min(100%, 860px);
 }
 
 .brand-mascot {
+  order: 3;
   width: min(14vw, 180px);
   max-width: 180px;
   object-fit: contain;
@@ -82,8 +83,9 @@ button {
 }
 
 .brand-logo {
-  width: min(70vw, 520px);
-  max-height: 120px;
+  order: 1;
+  width: min(21.6vw, 180px);
+  max-height: 53px;
   object-fit: contain;
   filter: drop-shadow(0 4px 10px rgba(17, 24, 39, 0.12));
 }
@@ -153,6 +155,7 @@ button {
 }
 
 .cover-panel {
+  width: min(100%, 912px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,29 +183,22 @@ button {
 }
 
 .cover-badge {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: clamp(3rem, 4.6vw, 5.6rem);
-  letter-spacing: -0.06em;
-  font-weight: 900;
-  padding: 16px 28px;
-  line-height: 1;
-}
-
-.cover-badge {
+  order: 2;
   background: rgba(12, 110, 204, 0.08);
   border: 1px solid rgba(12, 110, 204, 0.18);
   color: var(--brand-blue-deep);
-  padding: 8px 16px;
+  padding: 14px 22px;
   border-radius: 999px;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.72rem;
+  font-size: clamp(1.3rem, 2.9vw, 1.9rem);
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .intro-video-panel {
-  width: min(100%, 820px);
+  width: min(100%, 984px);
   background: rgba(255, 255, 255, 0.14);
   border: 2px solid rgba(12, 110, 204, 0.12);
   border-radius: 24px;
@@ -524,6 +520,23 @@ button {
     min-height: 92vh;
   }
 
+  .topbar {
+    padding: 16px 12px;
+  }
+
+  .brand-row {
+    gap: 8px;
+  }
+
+  .brand-mascot {
+    width: min(12vw, 88px);
+  }
+
+  .brand-logo {
+    width: min(16.8vw, 120px);
+    max-height: 41px;
+  }
+
   .screen-container {
     min-height: 610px;
   }
@@ -538,7 +551,7 @@ button {
   }
 
   .intro-video-panel {
-    width: min(100%, 560px);
+    width: min(100%, 672px);
   }
 
   .intro-video-screen {
@@ -559,5 +572,29 @@ button {
 
   .results-actions button {
     width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar {
+    padding: 14px 8px;
+  }
+
+  .brand-row {
+    gap: 6px;
+  }
+
+  .brand-mascot {
+    width: 40px;
+  }
+
+  .brand-logo {
+    width: 49px;
+  }
+
+  .cover-badge {
+    padding: 11px 14px;
+    font-size: 2.04rem;
+    letter-spacing: 0.035em;
   }
 }
