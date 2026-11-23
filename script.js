@@ -1,43 +1,53 @@
 const facts = [
   {
     text: 'The term "artificial intelligence" was first used in 1955 by computer scientist John McCarthy.',
-    source: 'Source: John McCarthy and early AI history; the Dartmouth workshop in 1956 helped popularize the field.'
+	  details: `The term Artificial Intelligence (AI) was introduced by computer scientist John McCarthy in 1955. He helped organize the Dartmouth Summer Research Project on Artificial Intelligence in 1956, which is widely considered a key event in the birth of AI as a research field. The goal was to explore whether computers could be made to perform tasks that normally require human intelligence, such as solving problems, learning, and understanding language. Today, AI has grown from an early scientific idea into technology we use every day.`
+    ,source: 'Source: John McCarthy and early AI history; the Dartmouth workshop in 1956 helped popularize the field.'
   },
   {
     text: 'Voice assistants like Siri and Alexa use AI to understand what you say and answer back.',
-    source: 'Source: Microsoft, Amazon, and Apple explain that speech recognition and language understanding are AI features.'
+  details: `When you ask Siri or Alexa a question, AI helps the device recognize your words, understand what you mean, and respond. For example, you might ask for tomorrow's weather, set a timer, or play your favourite song. The assistant processes your request and uses the appropriate service to provide an answer or complete a task. This technology combines speech recognition and language understanding to make interacting with computers feel more like having a conversation.`
+    ,source: 'Source: Microsoft, Amazon, and Apple explain that speech recognition and language understanding are AI features.'
   },
   {
     text: 'When YouTube or Netflix suggests what to watch next, that is AI learning what you like.',
-    source: 'Source: Recommendation systems use machine learning to suggest content based on viewing patterns.'
+details: `Have you ever noticed that YouTube or Netflix suggests another video or show you might enjoy? AI-powered recommendation systems look for patterns in your viewing activity, such as the types of videos you watch, the topics you enjoy, and what similar viewers like. Machine learning helps these systems predict what you may want to watch next. The recommendations can change as your interests change. This makes it easier to discover new content, although the suggestions are not always what you will like.`
+    ,source: 'Source: Recommendation systems use machine learning to suggest content based on viewing patterns.'
   },
   {
     text: 'Your email spam filter uses AI to catch junk mail before you ever see it.',
-    source: 'Source: Spam filtering commonly uses machine learning to detect patterns in suspicious messages.'
+details: `AI can help protect your inbox by identifying unwanted or suspicious emails before you open them. Spam filters learn patterns associated with junk mail, such as suspicious links, misleading subject lines, unusual sending behaviour, or language commonly found in scams. When an email matches these patterns, the system may move it to your spam folder or flag it for review. This helps reduce unwanted messages and can protect you from phishing attempts. However, some harmful emails may still get through, so it is important to be careful with unfamiliar links and attachments.`
+    ,source: 'Source: Spam filtering commonly uses machine learning to detect patterns in suspicious messages.'
   },
   {
     text: 'Self-driving cars use AI to recognize stop signs, traffic lights, and people crossing the street.',
-    source: 'Source: Autonomous vehicle systems use computer vision, sensors, and decision-making models.'
+details: `Self-driving vehicles use AI alongside cameras, radar, and other sensors to understand what is happening around them. Computer vision helps identify objects such as traffic lights, road signs, other vehicles, cyclists, and pedestrians. The system then uses this information to help decide when to slow down, stop, or change direction. These decisions must be made quickly because road conditions can change in seconds. Although this technology is advancing, self-driving systems have limitations and must be designed and tested carefully to help keep people safe.`
+    ,source: 'Source: Autonomous vehicle systems use computer vision, sensors, and decision-making models.'
   },
   {
     text: 'AI helps doctors spot signs of illness in X-rays and other medical scans.',
-    source: 'Source: Medical imaging AI systems are used to support analysis of X-rays, mammograms, and scans.'
+details: `Doctors can use AI tools to help examine medical images such as X-rays, mammograms, and other scans. These systems are trained on many examples and can learn to recognize patterns that may be associated with certain illnesses or injuries. For instance, an AI tool might flag an area of an X-ray that needs a closer look. This can help medical professionals review information more efficiently, but AI does not replace a doctor's expertise. Doctors consider the patient's symptoms, medical history, and other test results before making decisions.`
+    ,source: 'Source: Medical imaging AI systems are used to support analysis of X-rays, mammograms, and scans.'
   },
   {
     text: 'Face unlock on a phone uses AI to recognize your face.',
-    source: 'Source: Face recognition systems use machine learning to compare facial features with stored data.'
+details: `Many smartphones use facial recognition technology to help confirm your identity when you unlock your device. The system analyses features or patterns in your face and compares them with information recorded during setup. Depending on the phone, it may also use depth sensors or other techniques to make recognition more secure. This allows you to unlock your phone without typing a password every time. Facial recognition is convenient, but its accuracy and security depend on how the particular system is designed.`
+    ,source: 'Source: Face recognition systems use machine learning to compare facial features with stored data.'
   },
   {
     text: 'AI learns from lots of examples, a bit like how you learn by practicing.',
-    source: 'Source: Machine learning models improve by learning patterns from large sets of examples.'
+details: `Machine learning is a type of AI that finds patterns in examples and uses those patterns to make predictions or decisions. Imagine showing a computer thousands of pictures of cats and dogs, with labels identifying each animal. During training, the system learns patterns that help it tell the two apart in new pictures. This is a little like learning through practice, although computers learn in a different way from people. The quality and variety of the examples matter because incomplete or biased training data can lead to mistakes.`
+    ,source: 'Source: Machine learning models improve by learning patterns from large sets of examples.'
   },
   {
     text: 'AI can make mistakes and sometimes sounds sure even when it is wrong, so it is important to double-check important answers.',
-    source: 'Source: AI systems are powerful, but they can still produce errors or biased outputs and should be checked.'
+details: `AI tools can produce answers that sound clear and convincing but contain incorrect information. Generative AI, for example, creates responses based on patterns learned during training; it does not guarantee that every statement is true. AI can also reflect biases present in its training data or misunderstand a question. That is why it is important to check important answers against reliable sources, especially for health, safety, school research, and financial decisions. Think of AI as a helpful assistant, not an unquestionable source of truth.`
+    ,source: 'Source: AI systems are powerful, but they can still produce errors or biased outputs and should be checked.'
   },
   {
     text: 'AI is already part of many everyday tools, including phones, maps, games, and streaming services.',
-    source: 'Source: AI is embedded in consumer products across speech, recommendation, navigation, and personalization.'
+details: `AI is not just something from science fiction or the future. It is already built into many tools we use every day. Maps can use AI to estimate travel times and predict traffic; games can use it to control computer opponents or adapt challenges; phones can use it to improve photographs and recognize speech; and streaming services can recommend content. Each application uses AI for a different purpose, helping technology respond to information and perform tasks. Understanding how these systems work helps us use them more effectively and make informed choices about technology.` 
+    ,source: 'Source: AI is embedded in consumer products across speech, recommendation, navigation, and personalization.'
   }
 ];
 
@@ -127,6 +137,8 @@ const screenMap = {
 
 const startBtn = document.getElementById('start-btn');
 const aiToolsBtn = document.getElementById('ai-tools-btn');
+const introVideo = document.querySelector('.intro-video-screen');
+const playIntroVideoBtn = document.getElementById('play-intro-video-btn');
 const nextFactBtn = document.getElementById('next-fact-btn');
 const nextQuestionBtn = document.getElementById('next-question-btn');
 const tryAgainBtn = document.getElementById('try-again-btn');
@@ -135,6 +147,7 @@ const startOverIcon = document.getElementById('start-over-icon');
 
 const factProgress = document.getElementById('fact-progress');
 const factText = document.getElementById('fact-text');
+const factDetails = document.getElementById('fact-details');
 const factSource = document.getElementById('fact-source');
 
 const quizProgress = document.getElementById('quiz-progress');
@@ -166,10 +179,22 @@ function shuffle(items) {
 }
 
 function showScreen(name) {
+  if (name !== 'cover') stopIntroVideo();
   Object.entries(screenMap).forEach(([key, screen]) => {
     screen.classList.toggle('active', key === name);
   });
   resetIdleTimer();
+}
+
+function stopIntroVideo() {
+  if (!introVideo) return;
+  introVideo.removeAttribute('src');
+  playIntroVideoBtn.classList.remove('hidden');
+}
+
+function playIntroVideo() {
+  introVideo.src = 'https://www.youtube.com/embed/oJC8VIDSx_Q?autoplay=1&controls=1&playsinline=1&rel=0&modestbranding=1';
+  playIntroVideoBtn.classList.add('hidden');
 }
 
 function resetIdleTimer() {
@@ -180,6 +205,7 @@ function resetIdleTimer() {
 }
 
 function startOver() {
+  stopIntroVideo();
   factIndex = 0;
   questionIndex = 0;
   correctAnswers = 0;
@@ -195,6 +221,7 @@ function showFact(index) {
   const fact = factsList[index];
   factProgress.textContent = `Fact ${index + 1} of ${factsList.length}`;
   factText.textContent = fact.text;
+  factDetails.textContent = fact.details;
   factSource.textContent = fact.source;
 }
 
@@ -360,6 +387,8 @@ startBtn.addEventListener('click', () => {
   showScreen('facts');
   showFact(0);
 });
+
+playIntroVideoBtn.addEventListener('click', playIntroVideo);
 
 aiToolsBtn.addEventListener('click', () => {
   showScreen('tools');

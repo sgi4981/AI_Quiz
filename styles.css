@@ -205,16 +205,43 @@ button {
   padding: 18px 18px 14px;
 }
 
-.intro-video-screen {
+.intro-video-screen,
+.video-play-btn {
   width: 100%;
   aspect-ratio: 16 / 9;
-  height: auto;
   min-height: 260px;
-  border: 0;
   border-radius: 18px;
+}
+
+.intro-video-screen {
+  height: auto;
+  border: 0;
   display: block;
   background: #000;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.video-play-btn {
+  border: 0;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #123f70, #0879c9);
+  color: #fff;
+  font: inherit;
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.video-play-btn span {
+  font-size: 3rem;
+}
+
+.video-play-btn:focus-visible {
+  outline: 4px solid rgba(78, 194, 255, 0.7);
+  outline-offset: 3px;
 }
 
 .video-caption {
@@ -350,17 +377,25 @@ button {
 }
 
 .fact-text {
-  font-size: clamp(1.2rem, 2vw, 1.55rem);
-  line-height: 1.6;
-  margin: 0 0 18px;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.45;
+  margin: 0 0 12px;
   color: var(--ink);
-  min-height: 160px;
+}
+
+.fact-details {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .fact-source {
   margin: 0 0 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 0.82rem;
   line-height: 1.5;
 }
 
@@ -561,7 +596,8 @@ button {
     width: min(100%, 672px);
   }
 
-  .intro-video-screen {
+  .intro-video-screen,
+  .video-play-btn {
     min-height: 200px;
   }
 
